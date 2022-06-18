@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from "@testing-library/react"
-import userEvent from '@testing-library/user-event'
 import { TestPlayround, Title } from "../../component/title"
 
 test('cek teks title jika ada props name', async () => {
