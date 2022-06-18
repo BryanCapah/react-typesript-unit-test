@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 
 interface ITitle {
     text: string
@@ -10,10 +10,10 @@ export const Title = ({ text }: ITitle) => {
 
 export const TestPlayround = () => {
     const [disabled, disabledSet] = useState(true)
-    const buttonText: string = !disabled ? 'disable me' : 'enable me'
-    const butttonHandler: () => void = () => {
+    const buttonText: string = useMemo(() => !disabled ? 'disable me' : 'enable me', [disabled])
+    const butttonHandler: () => void = useCallback(() => {
         disabledSet(state => !state)
-    }
+    }, [])
     return <div>
         <input aria-label='text' disabled={disabled} />
         <button name='button-text' onClick={butttonHandler}>{buttonText}</button>
