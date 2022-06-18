@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react"
 import userEvent from '@testing-library/user-event'
-import { Button, Title } from "../../component/title"
+import { TestPlayround, Title } from "../../component/title"
 
 test('cek teks title jika ada props name', async () => {
   render(<Title text='brian' />)
@@ -16,7 +16,7 @@ test('cek teks title jika gak ada props', async () => {
 })
 
 test('cek kalo diklik button, dia enabled input textnya', async () => {
-  render(<Button />)
+  render(<TestPlayround />)
   const input = screen.getByRole('textbox', { name: /Text/i })
   const button = screen.getByRole('button', {
     name: 'enable me'

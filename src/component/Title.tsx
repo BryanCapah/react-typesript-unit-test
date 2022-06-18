@@ -3,15 +3,12 @@ import { useState } from "react"
 interface ITitle {
     text: string
 }
-interface IButton {
-    text: string
-}
 export const Title = ({ text }: ITitle) => {
     const hiddenTitle: boolean = text ? false : true
     return <div hidden={hiddenTitle} placeholder='title name'>{`your name is ${text}`}</div>
 }
 
-export const Button = () => {
+export const TestPlayround = () => {
     const [disabled, disabledSet] = useState(true)
     const buttonText: string = !disabled ? 'disable me' : 'enable me'
     const butttonHandler: () => void = () => {
