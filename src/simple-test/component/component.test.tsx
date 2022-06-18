@@ -14,7 +14,7 @@ test('cek teks title jika gak ada props', async () => {
   expect(component).not.toBeVisible()
 })
 
-test('cek kalo diklik button, dia enabled input textnya', async () => {
+test('cek sebelum click, input disabled, setelah klik, input enabled', async () => {
   render(<TestPlayround />)
   const input = screen.getByRole('textbox', { name: /Text/i })
   const button = screen.getByRole('button', {
